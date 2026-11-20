@@ -155,7 +155,7 @@
     <div class="wrap">
       <section class="hero" id="home" style="border:0">
         <div>
-          <div class="eyebrow">Portfolio personale</div>
+          <div class="eyebrow">Portfolio personale / 2026</div>
           <h1>Ciao, sono<br><span class="soft">Flafo24.</span></h1>
           <p class="intro">Mi piace smanettare con la tecnologia, provare cose nuove e trasformare le idee in piccoli progetti. Questo è il posto in cui raccolgo quello che faccio.</p>
           <div class="actions">
@@ -181,7 +181,7 @@
           <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">flafo24@portfolio: ~</span></div>
           <div class="terminal-body" aria-label="Terminale interattivo">
             <div class="terminal-welcome">Benvenuto nel terminale di Flafo24.</div>
-            <div class="terminal-hint">Comandi disponibili: <strong>whois</strong> · <strong>age</strong></div>
+            <div class="terminal-hint">Comando disponibile: <strong>whois</strong></div>
             <div id="terminal-output" aria-live="polite"></div>
             <form class="terminal-form" id="terminal-form">
               <label for="terminal-input">flafo24 &gt;</label>
@@ -240,10 +240,8 @@
       result.className = 'result';
       if (command === 'whois') {
         result.textContent = 'flafo24';
-      } else if (command === 'age') {
-        result.textContent = '14yo';
       } else {
-        result.textContent = 'Comando non riconosciuto. Prova: whois oppure age';
+        result.textContent = 'Comando non riconosciuto. Prova: whois';
         result.style.color = '#d6a7a7';
       }
       line.append(result);
