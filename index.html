@@ -38,6 +38,22 @@
     .brand span { color: var(--accent); }
     nav { display: flex; gap: 26px; color: var(--muted); font-size: 13px; }
     nav a { transition: color .2s ease; }
+    .terminal { overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #050c16; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
+    .terminal-bar { display: flex; align-items: center; gap: 7px; padding: 13px 16px; border-bottom: 1px solid var(--line); background: #0b1726; }
+    .terminal-dot { width: 9px; height: 9px; border-radius: 50%; background: #36506d; }
+    .terminal-title { margin-left: 7px; color: var(--muted); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .terminal-body { padding: 20px; font: 13px/1.8 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .terminal-welcome { color: var(--muted); margin-bottom: 10px; }
+    .terminal-hint { color: #7898c2; margin-bottom: 14px; }
+    .terminal-line { color: #dce9fa; overflow-wrap: anywhere; }
+    .terminal-line .prompt { color: var(--accent); }
+    .terminal-line .result { color: #a9d6b2; padding-left: 18px; }
+    .terminal-form { display: flex; align-items: center; gap: 9px; margin-top: 8px; }
+    .terminal-form label { color: var(--accent); }
+    .terminal-form input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; caret-color: var(--accent); }
+    .terminal-form input::placeholder { color: #60758e; }
+    .terminal-note { color: #60758e; font-size: 11px; margin-top: 10px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
     .hero { padding: 112px 0 100px; display: grid; grid-template-columns: 1fr 210px; gap: 48px; align-items: center; }
     .eyebrow { color: var(--accent); font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; }
     h1 { margin: 18px 0; max-width: 700px; font-size: clamp(46px, 8vw, 82px); line-height: .99; letter-spacing: -.075em; font-weight: 760; }
@@ -131,7 +147,7 @@
     <div class="wrap nav">
       <a class="brand" href="#home">flafo<span>24</span>.</a>
       <nav aria-label="Navigazione principale">
-        <a href="#about">Chi sono</a><a href="#skills">Competenze</a><a href="#projects">Progetti</a><a href="#contact">Contatti</a>
+        <a href="#about">Chi sono</a><a href="#skills">Competenze</a><a href="#projects">Progetti</a><a href="#terminal">Terminale</a><a href="#contact">Contatti</a>
       </nav>
     </div>
   </header>
@@ -159,26 +175,82 @@
           <div class="note">Qui trovi esperimenti, idee e lavori personali. Aggiungerò i progetti man mano che prendono forma.</div>
         </div>
       </section>
+      <section id="terminal">
+        <div class="section-head"><h2>Terminale</h2><span class="section-no">02 / QUICK INFO</span></div>
+        <div class="terminal">
+          <div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">flafo24@portfolio: ~</span></div>
+          <div class="terminal-body" aria-label="Terminale interattivo">
+            <div class="terminal-welcome">Benvenuto nel terminale di Flafo24.</div>
+            <div class="terminal-hint">Comandi disponibili: <strong>whois</strong> · <strong>age</strong></div>
+            <div id="terminal-output" aria-live="polite"></div>
+            <form class="terminal-form" id="terminal-form">
+              <label for="terminal-input">flafo24 &gt;</label>
+              <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="scrivi un comando..." aria-label="Scrivi un comando">
+            </form>
+            <div class="terminal-note">Premi Invio per eseguire il comando.</div>
+          </div>
+        </div>
+      </section>
       <section id="skills">
-        <div class="section-head"><h2>Cose che mi interessano</h2><span class="section-no">02 / INTERESTS</span></div>
+        <div class="section-head"><h2>Cose che mi interessano</h2><span class="section-no">03 / INTERESTS</span></div>
         <div class="skills">
           <span class="tag">Discord</span><span class="tag">Minecraft</span><span class="tag">Sviluppo web</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">PC & tecnologia</span>
         </div>
       </section>
       <section id="projects">
-        <div class="section-head"><h2>Progetti</h2><span class="section-no">03 / SELECTED WORK</span></div>
+        <div class="section-head"><h2>Progetti</h2><span class="section-no">04 / SELECTED WORK</span></div>
         <div class="project"><span class="project-num">01</span><div><h3>Portfolio Flafo24</h3><p>Il sito personale: uno spazio per presentarmi e raccogliere i miei lavori.</p></div><span class="project-status">ONLINE</span></div>
         <div class="project"><span class="project-num">02</span><div><h3>Prossimamente</h3><p>Sto lavorando a nuove idee. Quando saranno pronte, le troverai qui.</p></div><span class="project-status">IN ARRIVO</span></div>
       </section>
       <section id="contact">
-        <div class="section-head"><h2>Contatti</h2><span class="section-no">04 / SAY HELLO</span></div>
+        <div class="section-head"><h2>Contatti</h2><span class="section-no">05 / SAY HELLO</span></div>
         <div class="contact-box">
-          <div><strong>Hai un'idea o vuoi fare due chiacchiere?</strong><p>Puoi trovare il mio profilo e seguire i prossimi progetti su GitHub.</p></div>
-          <a class="button primary" href="https://github.com/flafo24s" target="_blank" rel="noreferrer">Vai su GitHub ↗</a>
+          <div>
+            <strong>Hai un'idea o vuoi fare due chiacchiere?</strong>
+            <p>Discord: <strong>@flafo24</strong></p>
+            <p>Puoi trovare i miei progetti anche su GitHub.</p>
+          </div>
+          <div class="contact-links">
+            <a class="button primary" href="https://discord.com/app" target="_blank" rel="noreferrer">Apri Discord ↗</a>
+            <a class="button" href="https://github.com/flafo24s" target="_blank" rel="noreferrer">Vai su GitHub ↗</a>
+          </div>
         </div>
       </section>
     </div>
   </main>
   <footer class="wrap"><span>© 2026 Flafo24</span><span>Fatto con calma, un pezzo alla volta.</span></footer>
+  <script>
+    const terminalForm = document.getElementById('terminal-form');
+    const terminalInput = document.getElementById('terminal-input');
+    const terminalOutput = document.getElementById('terminal-output');
+
+    terminalForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const command = terminalInput.value.trim().toLowerCase();
+      if (!command) return;
+
+      const line = document.createElement('div');
+      line.className = 'terminal-line';
+      const prompt = document.createElement('div');
+      prompt.innerHTML = '<span class="prompt">flafo24 &gt;</span> ';
+      prompt.append(document.createTextNode(command));
+      line.append(prompt);
+
+      const result = document.createElement('div');
+      result.className = 'result';
+      if (command === 'whois') {
+        result.textContent = 'flafo24';
+      } else if (command === 'age') {
+        result.textContent = '14yo';
+      } else {
+        result.textContent = 'Comando non riconosciuto. Prova: whois oppure age';
+        result.style.color = '#d6a7a7';
+      }
+      line.append(result);
+      terminalOutput.append(line);
+      terminalInput.value = '';
+      terminalOutput.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
