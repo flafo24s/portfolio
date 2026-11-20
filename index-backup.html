@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <link rel="icon" type="image/png" href="./favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10110f">
+<meta name="description" content="Flafo24 — Sviluppo Discord, Minecraft e progetti digitali.">
+<title>Flafo24 — Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #10110f;
+  --panel: #171915;
+  --text: #f1f0e9;
+  --muted: #92958b;
+  --accent: #c5f477;
+  --line: #30332c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.container {
+  width: min(1120px, 88%);
+  margin: auto;
+}
+
+/* NAVIGAZIONE */
+
+nav {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 78px;
+  z-index: 100;
+  background: rgba(16,17,15,.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  color: var(--muted);
+  transition: color .25s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-contact {
+  border: 1px solid var(--line);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* ELEMENTI GENERALI */
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 125px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  font-size: clamp(35px, 5vw, 57px);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+  margin: 20px 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform .25s;
+}
+
+a:hover .arrow {
+  transform: translate(4px,-4px);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 790px;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: .045;
+  filter: blur(110px);
+  right: -150px;
+  top: 100px;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 9px 15px;
+  margin-bottom: 35px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  animation: pulse 2s infinite;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 7.5vw, 92px);
+  letter-spacing: -6px;
+  line-height: 1.02;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-description {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #151710;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #c5f47725;
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* GRAFICA HERO */
+
+.visual {
+  height: 390px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit {
+  position: absolute;
+  width: 290px;
+  height: 290px;
+  border: 1px solid #454b39;
+  border-radius: 50%;
+  animation: rotate 25s linear infinite;
+}
+
+.orbit::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 50%;
+  top: 35px;
+  left: 45px;
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.orbit-two {
+  width: 370px;
+  height: 370px;
+  border-color: #252a22;
+  animation-direction: reverse;
+}
+
+.profile-card {
+  width: 245px;
+  height: 285px;
+  background: linear-gradient(145deg,#242a20,#151713);
+  border: 1px solid #454b39;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 30px 80px #0008;
+  animation: float 5s ease-in-out infinite;
+}
+
+.profile-symbol {
+  width: 105px;
+  height: 105px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #68784d;
+  background: #303a25;
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 37px;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+
+.profile-card strong {
+  margin-top: 22px;
+  font-size: 20px;
+}
+
+.profile-card small {
+  margin-top: 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.floating-label {
+  position: absolute;
+  background: #22251e;
+  border: 1px solid #414638;
+  border-radius: 5px;
+  padding: 11px 15px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  z-index: 3;
+}
+
+.label-one {
+  top: 55px;
+  right: -5px;
+  animation: float 4s infinite;
+}
+
+.label-two {
+  bottom: 55px;
+  left: -5px;
+  animation: float 5s infinite reverse;
+}
+
+/* INTRODUZIONE */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 100px;
+}
+
+.about-text {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2.1;
+}
+
+.about-text p + p {
+  margin-top: 20px;
+}
+
+.stat {
+  margin-top: 35px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat strong {
+  color: var(--accent);
+  font-size: 17px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* COMPETENZE */
+
+.skills-list {
+  margin-top: 50px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 65px 1fr 1fr 30px;
+  align-items: center;
+  gap: 20px;
+  padding: 23px 10px;
+  border-bottom: 1px solid var(--line);
+  transition: .3s;
+}
+
+.skill-row:hover {
+  background: #ffffff05;
+  padding-left: 20px;
+}
+
+.skill-number {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.skill-row h3 {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.skill-row p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.skill-arrow {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* PROGETTI */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+  transition: .35s;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: #788d53;
+}
+
+.project-art {
+  height: 215px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center,#343d29,#1a1e17 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-art.discord {
+  background: radial-gradient(circle at center,#34304b,#1a1924 75%);
+}
+
+.project-art span {
+  font-size: 65px;
+  transition: transform .4s;
+}
+
+.project-card:hover .project-art span {
+  transform: scale(1.2) rotate(-7deg);
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-category {
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.project-info h3 {
+  font-size: 21px;
+  margin: 12px 0 8px;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.project-status {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 7px 10px;
+  border-radius: 3px;
+}
+
+/* CONTATTI */
+
+.contact-box {
+  margin-top: 45px;
+  padding: 65px;
+  border: 1px solid #414638;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at top right,#343e2740,transparent 65%),var(--panel);
+}
+
+.contact-box h2 {
+  font-size: clamp(38px,6vw,68px);
+  line-height: 1.1;
+  letter-spacing: -3px;
+  margin: 20px 0;
+}
+
+.contact-box h2 span {
+  color: var(--accent);
+}
+
+.contact-box > p {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 440px;
+  line-height: 2;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 19px;
+  background: #ffffff08;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 12px;
+  transition: .3s;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.contact-link strong {
+  font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.footer-inner a:hover {
+  color: var(--accent);
+}
+
+/* ANIMAZIONI */
+
+@keyframes pulse {
+  50% { opacity: .4; }
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content {
+  animation: appear 1s ease both;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:750px) {
+  .nav-links {
+    gap: 13px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .nav-contact {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 160px 0 90px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px,13vw,75px);
+    letter-spacing: -4px;
+  }
+
+  .visual {
+    height: 350px;
+  }
+
+  .orbit-two {
+    width: 310px;
+    height: 310px;
+  }
+
+  .orbit {
+    width: 245px;
+    height: 245px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .skill-row {
+    grid-template-columns: 35px 1fr 25px;
+    gap: 10px;
+  }
+
+  .skill-row p {
+    display: none;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 35px 22px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media(max-width:390px) {
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a {
+    font-size: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="logo">F <span>flafo24</span></a>
+
+    <div class="nav-links">
+      <a href="#profilo">Profilo</a>
+      <a href="#competenze">Competenze</a>
+      <a href="#progetti">Progetti</a>
+      <a href="#contatti" class="nav-contact">Contattami ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+      <div class="availability">
+        <span class="dot"></span>
+        APPASSIONATO DI TECNOLOGIA
+      </div>
+
+      <h1>
+        Creo cose<br>
+        che prendono<br>
+        <span>vita.</span>
+      </h1>
+
+      <p class="hero-description">
+        Sono Flafo24, appassionato di sviluppo e tecnologia.
+        Mi piace trasformare idee in progetti digitali,
+        sperimentare e costruire nuove esperienze.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#progetti" class="btn btn-primary">
+          Scopri i progetti ↘
+        </a>
+
+        <a href="#profilo" class="btn btn-secondary">
+          Conosci il mio percorso
+        </a>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="orbit orbit-two"></div>
+      <div class="orbit"></div>
+
+      <div class="profile-card">
+        <div class="profile-symbol">F24</div>
+        <strong>flafo24</strong>
+        <small>IDEAS → REALITY</small>
+      </div>
+
+      <div class="floating-label label-one">
+        ✳ BUILD IN PROGRESS
+      </div>
+
+      <div class="floating-label label-two">
+        &lt;/&gt; SEMPRE IN EVOLUZIONE
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- PROFILO -->
+
+<section class="section" id="profilo">
+  <div class="container about-grid reveal">
+
+    <div>
+      <div class="eyebrow">01 / PROFILO</div>
+
+      <h2 class="section-heading">
+        Curiosità,<br>
+        codice e<br>
+        community.
+      </h2>
+    </div>
+
+    <div class="about-text">
+      <p>
+        Mi piace capire come funzionano le cose e utilizzare
+        la tecnologia per costruirne di nuove. Nel tempo
+        ho sviluppato interesse per il mondo della
+        programmazione, dei server e delle community online.
+      </p>
+
+      <p>
+        Ho già realizzato alcuni progetti personali e
+        continuo a sperimentare nuove soluzioni.
+        Ogni progetto rappresenta un'occasione per
+        imparare, migliorare e fare esperienza.
+      </p>
+
+      <div class="stat">
+        <strong>F24 / 2026</strong>
+        <span>Un progetto alla volta.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPETENZE -->
+
+<section class="section" id="competenze">
+  <div class="container reveal">
+
+    <div class="eyebrow">02 / COMPETENZE</div>
+
+    <h2 class="section-heading">
+      Strumenti per<br>
+      dare forma alle idee.
+    </h2>
+
+    <p class="muted" style="font-size:13px">
+      I settori che mi interessano e in cui realizzo progetti.
+    </p>
+
+    <div class="skills-list">
+
+      <div class="skill-row">
+        <span class="skill-number">01</span>
+        <h3>Discord</h3>
+        <p>Bot, automazioni e community</p>
+        <span class="skill-arrow">↗</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-number">02</span>
+        <h3>Minecraft</h3>
+        <p>Server, configurazioni e progetti</p>
+        <span class="skill-arrow">↗</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-number">03</span>
+        <h3>Programmazione</h3>
+        <p>Sperimentazione e sviluppo</p>
+        <span class="skill-arrow">↗</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-number">04</span>
+        <h3>Windows & PC</h3>
+        <p>Configurazione e gestione software</p>
+        <span class="skill-arrow">↗</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-number">05</span>
+        <h3>Montaggio video</h3>
+        <p>Editing e contenuti digitali</p>
+        <span class="skill-arrow">↗</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROGETTI -->
+
+<section class="section" id="progetti">
+  <div class="container reveal">
+
+    <div class="eyebrow">03 / PORTFOLIO</div>
+
+    <h2 class="section-heading">
+      Piccole idee.<br>
+      Grandi ambizioni.
+    </h2>
+
+    <p class="muted" style="font-size:13px">
+      Alcuni dei settori dei miei progetti personali.
+    </p>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-art discord">
+          <span>🤖</span>
+        </div>
+
+        <div class="project-info">
+          <div class="project-category">01 — DISCORD DEVELOPMENT</div>
+          <h3>Bot Discord</h3>
+          <p>
+            Progetti dedicati all'automazione,
+            alla gestione delle community e
+            alla personalizzazione dei server.
+          </p>
+          <span class="project-status">PROGETTI IN AGGIORNAMENTO</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-art">
+          <span>⛏️</span>
+        </div>
+
+        <div class="project-info">
+          <div class="project-category">02 — MINECRAFT</div>
+          <h3>Server Minecraft</h3>
+          <p>
+            Esperimenti, configurazioni e
+            progetti dedicati all'ambiente
+            Minecraft multiplayer.
+          </p>
+          <span class="project-status">PROGETTI IN AGGIORNAMENTO</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+
+<section class="section" id="contatti">
+  <div class="container reveal">
+
+    <div class="eyebrow">04 / CONTATTI</div>
+
+    <div class="contact-box">
+      <div class="eyebrow">HAI UN'IDEA IN MENTE?</div>
+
+      <h2>
+        Parliamone<br>
+        <span>insieme.</span>
+      </h2>
+
+      <p>
+        Per collaborazioni, progetti o semplicemente
+        per parlare di tecnologia e condividere idee.
+        Puoi trovarmi sui miei profili.
+      </p>
+
+      <div class="contact-links">
+
+        <button class="contact-link" id="discord-copy" type="button">
+          <span>◉</span>
+          <span>
+            Discord<br>
+            <strong>@flafo24</strong>
+          </span>
+          <span>↗</span>
+        </button>
+
+        <a class="contact-link"
+           href="https://github.com/flafo24"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span>⌘</span>
+          <span>
+            GitHub<br>
+            <strong>flafo24</strong>
+          </span>
+          <span>↗</span>
+        </a>
+
+      </div>
+
+      <p id="copy-status" aria-live="polite"
+         style="margin-top:15px;font-size:11px"></p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 FLAFO24</span>
+    <a href="#">TORNA ALL'INIZIO ↑</a>
+    <span>UN COMMIT ALLA VOLTA.</span>
+  </div>
+</footer>
+
+<script>
+// Animazioni all'ingresso delle sezioni
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
+
+// Copia del nome Discord
+
+document.getElementById('discord-copy').addEventListener('click', async () => {
+  const status = document.getElementById('copy-status');
+
+  try {
+    await navigator.clipboard.writeText('@flafo24');
+    status.textContent = '✓ Nome Discord copiato!';
+  } catch {
+    status.textContent = 'Il tuo contatto Discord è @flafo24';
+  }
+});
+</script>
+
+</body>
+</html>
